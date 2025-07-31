@@ -57,17 +57,23 @@ const ContactForm = () => {
                 <div className='mb-2'>
                     <label className='text-gray-700'>Email</label>
                     <input type='text' className='w-full rounded-lg p-1.5 outline-blue-300' placeholder='jour@gmail.com' {...register("email")}/>
-                    <p>{errors.name?.meassge}</p>
+                    { errors.name && (
+                        <p>{errors.email?.meassge}</p>
+                    )}
                 </div>
                 <div className='mb-2'>
                     <label className='text-gray-700'>Age</label>
                     <input type='number' className='w-full rounded-lg p-1.5 outline-blue-300' placeholder='18-30' {...register("age")}/>
-                    <p>{errors.name?.meassge}</p>
+                   { errors.name && (
+                        <p>{errors.age?.meassge}</p>
+                    )}
                 </div>
                 <div className='mb-2'>
                     <label className='text-gray-700'>Message</label>
                     <textarea type="Message" placeholder='150-200 word' className='w-full rounded-lg p-1 h-28 outline-blue-300' {...register("message")}></textarea>
-                    <p>{errors.name?.meassge}</p>
+                    { errors.name && (
+                        <p>{errors.message?.meassge}</p>
+                    )}
                 </div>
                 <button className='bg-blue-700 text-white rounded-full p-2'><span className='bg-white text-blue-700 px-2 py-1 mr-4 rounded-full'><FaArrowRight className='inline-block'/></span>Get a solution</button>
             
